@@ -20,44 +20,26 @@ export default function Footer(props) {
            // It helps us to grow & continue our work. Thank you.
           // OR Purchase PRO version for commercial license.  */}
           <a
+            href="https://purplr.io/"
+            rel="noopener"
+            target="_blank">
+            Purplr
+          </a>
+        </span>
+        <span>&middot;</span>
+        <span>
+          {" "}    
+          <a
             href="https://web3templates.com/?ref=stablo-template"
             rel="noopener"
             target="_blank">
             Web3Templates
           </a>
         </span>
-        <span>&middot;</span>
-        <span>
-          {" "}
-          <a
-            href="https://github.com/web3templates/stablo"
-            rel="noopener"
-            target="_blank">
-            Github
-          </a>
-        </span>
       </div>
-      <div className="flex items-center justify-between mt-2">
-        <div className="mt-5">
-          <a
-            href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
-            target="_blank"
-            rel="noopener"
-            className="relative block w-44">
-            <Image
-              src={VercelLogo}
-              layout="fixed"
-              loader={myLoader}
-              alt="Powered by Vercel"
-              unoptimized={true}
-              width="150"
-              height="25"
-            />
-          </a>
-        </div>
+      <div className="flex items-center justify-end mt-2">
         <ThemeSwitch />
       </div>
-      <Backlink />
     </Container>
   );
 }

@@ -7,7 +7,7 @@ export default function CategoryLabel({ categories }) {
       {categories?.length &&
         categories.slice(0).map((category, index) => (
           <Link href="#" key={index}>
-            <a>
+            <a className="text-lg" >
               <Label color={category.color}>{category.title}</Label>
             </a>
           </Link>

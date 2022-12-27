@@ -46,7 +46,7 @@ export default function PostList({ post, aspect, preloadImage }) {
           </Link>
         </div>
         <CategoryLabel categories={post.categories} />
-        <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-normal text-brand-primary dark:text-white">
           <Link href={`/post/${post.slug.current}`}>
             <span
               className="     bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
@@ -94,7 +94,7 @@ export default function PostList({ post, aspect, preloadImage }) {
             &bull;
           </span>
           <time
-            className="text-sm"
+            className="text-md"
             dateTime={post?.publishedAt || post._createdAt}>
             {format(
               parseISO(post?.publishedAt || post._createdAt),
