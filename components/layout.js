@@ -18,14 +18,14 @@ export default function Layout(props) {
         <link rel="preconnect" href="https://cdn.sanity.io/" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io//" />
         { process.env.NEXT_PUBLIC_GOOGLE_ADS_ID &&
-        <Script
-          id="Adsense-id"
-          data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}
-          async="true"
-          strategy="beforeInteractive"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-      }
+          <Script
+            id="Adsense-id"
+            data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}
+            async="true"
+            strategy="beforeInteractive"
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
+        }
       </Head>
       <NextSeo
         title={props.title}
