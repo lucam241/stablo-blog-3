@@ -15,12 +15,24 @@ import { parseISO, format } from "date-fns";
 import { NextSeo } from "next-seo";
 import defaultOG from "/public/img/opengraph.jpg";
 
-import { singlequery, configQuery, pathquery } from "@lib/groq";
+import { singlequery, configQuery, pathquery, featuredPostsQuery } from "@lib/groq";
 import CategoryLabel from "@components/blog/category";
 import AuthorCard from "@components/blog/authorCard";
+import PostList from "@components/postlist";
+
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array
+}
 
 export default function Post(props) {
-  const { postdata, siteconfig, preview } = props;
+  const { postdata, siteconfig, preview, posts } = props;
+  
 
   const router = useRouter();
   const { slug } = router.query;
@@ -102,11 +114,11 @@ export default function Post(props) {
                 <CategoryLabel categories={post.categories} />
               </div>
 
-              <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-                {post.title}
+              <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-start lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+                {post.title.toUpperCase()} 
               </h1>
 
-              <div className="flex justify-center mt-3 space-x-3 text-gray-500 ">
+              <div className="flex justify-start mt-3 space-x-3 text-gray-500 ">
                 <div className="flex items-center gap-3">
                   <div className="relative flex-shrink-0 w-10 h-10">
                     {AuthorimageProps && (
@@ -149,7 +161,7 @@ export default function Post(props) {
             </div>
           </Container>
 
-          <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
+          <div className="relative z-0 max-w-screen-custom mx-auto overflow-hidden lg:rounded-lg aspect-video">
             {imageProps && (
               <Image
                 src={imageProps.src}
@@ -166,7 +178,7 @@ export default function Post(props) {
 
           {/* {post?.mainImage && <MainImage image={post.mainImage} />} */}
           <Container>
-            <article className="max-w-screen-md mx-auto ">
+            <article className="max-w-screen-lg mx-auto ">
               <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
                 {post.body && <PortableText value={post.body} />}
               </div>
@@ -179,6 +191,15 @@ export default function Post(props) {
               </div>
               {post.author && <AuthorCard author={post.author} />}
             </article>
+            <div className="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 ">
+              {posts.map(post => (
+                <PostList
+                  key={post._id}
+                  post={post}
+                  aspect="square"
+                />
+              ))}
+            </div>
           </Container>
         </Layout>
       )}
@@ -206,14 +227,16 @@ export async function getStaticProps({ params, preview = false }) {
   const post = await getClient(preview).fetch(singlequery, {
     slug: params.slug
   });
-
+  var posts = await getClient(preview).fetch(featuredPostsQuery);
+  posts = shuffleArray(posts).slice(0,3)
   const config = await getClient(preview).fetch(configQuery);
 
   return {
     props: {
       postdata: { ...post },
       siteconfig: { ...config },
-      preview
+      preview,
+      posts
     },
     revalidate: 10
   };

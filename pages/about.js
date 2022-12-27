@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function About({ authors, siteconfig }) {
+
   return (
     <Layout {...siteconfig}>
       <Container>
@@ -39,19 +40,8 @@ export default function About({ authors, siteconfig }) {
         </div>
 
         <div className="mx-auto prose text-center dark:prose-invert mt-14">
-          <p>
-            We provide real-time connectivity to enable software
-            providers and financial institutions to build integrated
-            products for their small business customers.
-          </p>
-          <p>
-            Our API infrastructure is leveraged by clients ranging
-            from lenders to corporate card providers and business
-            forecasting tools, with use cases including automatic
-            reconciliation, business dashboarding, and loan
-            decisioning.
-          </p>
-          <p>
+          {siteconfig.website_description}
+          <p className="pt-6n" >
             <Link href="/contact">Get in touch</Link>
           </p>
         </div>

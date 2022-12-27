@@ -55,7 +55,7 @@ export default function Contact({ siteconfig }) {
         <div className="grid my-10 md:grid-cols-2">
           <div className="my-10">
             <h2 className="text-2xl font-semibold dark:text-white">
-              Contact Stablo
+              Contact {siteconfig.title}
             </h2>
             <p className="max-w-sm mt-5">
               Have something to say? We are here to help. Fill up the
@@ -63,10 +63,10 @@ export default function Contact({ siteconfig }) {
             </p>
 
             <div className="mt-5">
-              <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
+              {/*<div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <LocationMarkerIcon className="w-4 h-4" />
                 <span>1734 Sanfransico, CA 93063</span>
-              </div>
+  </div>*/}
               {siteconfig?.email && (
                 <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                   <MailIcon className="w-4 h-4" />
@@ -196,7 +196,7 @@ export default function Contact({ siteconfig }) {
 
             {isSubmitSuccessful && isSuccess && (
               <div className="mt-3 text-sm text-center text-green-500">
-                {message || "Success. Message sent successfully"}
+                {"Message sent successfully. Thank you for your feedback."}
               </div>
             )}
             {isSubmitSuccessful && !isSuccess && (
