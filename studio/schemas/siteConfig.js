@@ -31,6 +31,13 @@ export default {
       title: "Site title"
     },
     {
+      title: "Website Description",
+      name: "website_description",
+      type: "text",
+      rows: 5,
+      description: "Enter Website Description"
+    },
+    {
       title: "URL",
       name: "url",
       type: "url",
