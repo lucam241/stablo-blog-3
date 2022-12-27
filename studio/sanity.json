@@ -1,12 +1,12 @@
 {
   "root": true,
-  "project": {
-    "name": "Stablo Template",
-    "basePath": "/studio"
-  },
   "api": {
     "projectId": "",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Stablo Template",
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",
@@ -22,7 +22,8 @@
       ]
     }
   },
-  "parts": [{
+  "parts": [
+    {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
     },
