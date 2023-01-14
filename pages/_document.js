@@ -5,7 +5,7 @@ import Document, {
   NextScript
 } from "next/document";
 import Script from "next/script";
-
+//comment
 class MyDocument extends Document {
   render() {
     return (
