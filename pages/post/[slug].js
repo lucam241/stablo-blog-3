@@ -161,7 +161,7 @@ export default function Post(props) {
             </div>
           </Container>
 
-          <div className="relative z-0 max-w-screen-custom mx-auto overflow-hidden lg:rounded-lg aspect-video">
+          <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
             {imageProps && (
               <Image
                 src={imageProps.src}
