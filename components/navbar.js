@@ -108,7 +108,7 @@ export default function Navbar(props) {
                   {rightmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="px-5 py-2 text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                        className="px-5 py-2 text-lg font-medium text-gray-600 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
                         <span> {item.label}</span>
@@ -124,12 +124,12 @@ export default function Navbar(props) {
               </div>
               <Disclosure.Panel>
                 <div className="flex flex-col items-center justify-start order-2 w-full md:hidden">
-                  {mobilemenu.map((item, index) => (
+                  { mobilemenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                        className="px-5 py-2 text-sm font-medium text-gray-500 hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
-                        rel={item.external ? "noopener" : ""}>
+                        rel={item.external ? "noopener" : ""} >
                         {item.label}
                       </a>
                     </Link>

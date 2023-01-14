@@ -1,6 +1,7 @@
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 import "../css/tailwind.css";
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
+      <Analytics />
     </>
   );
 }
