@@ -28,7 +28,11 @@ export default {
           { title: "Green", value: "green" },
           { title: "Blue", value: "blue" },
           { title: "Purple", value: "purple" },
-          { title: "Orange", value: "orange" }
+          { title: "Red", value: "red" },
+          { title: "Teal", value: "teal" },
+          { title: "White", value: "white" },
+          { title: "Mov", value: "#b526b0" },
+          { title: "Turcoaz", value: "#36ebd3" },
         ]
       }
     },
