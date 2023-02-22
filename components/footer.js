@@ -37,8 +37,14 @@ export default function Footer(props) {
           </a>
         </span>
       </div>
-      <div className="flex items-center justify-end mt-2">
+      <div className="flex flex-row-reverse items-center justify-between mt-2">
         <ThemeSwitch />
+          <a
+            href="/privacy"
+            rel="noopener"
+          >
+            Privacy Policy
+          </a>
       </div>
     </Container>
   );
