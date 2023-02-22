@@ -3,8 +3,6 @@
     "extends": ["next"],
     "rules": {
     "react/jsx-no-target-blank": [2, { "allowReferrer": true }],
-    "react/display-name": [0, { "ignoreTranspilerName": false }],
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
+    "react/display-name": [0, { "ignoreTranspilerName": false }]
     }
   }
