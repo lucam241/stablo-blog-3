@@ -39,12 +39,12 @@ export default function Footer(props) {
       </div>
       <div className="flex flex-row-reverse items-center justify-between mt-2">
         <ThemeSwitch />
-          <a
+          <Link
             href="/privacy"
             rel="noopener"
           >
             Privacy Policy
-          </a>
+          </Link>
       </div>
     </Container>
   );
